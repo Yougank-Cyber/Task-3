@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Business Homepage</title>
+    <link rel="stylesheet" href="TaskStyle.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <h1>WELCOME!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Welcome to Our Business Page</h2>
+            <p>We invest our TIME & CAPITAL in YOUR STARTUP!</p>
+            <a href="https://i.pinimg.com/564x/2c/50/86/2c50867a4d93068abe3bcc5c3b2e16b5.jpg" class="hero-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of services to help your Business growth:</p>
+        <ul>
+            <li>Consulting Services</li>
+            <li>Professional Training</li>
+            <li>Marketing and Advertising Solutions</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a dedicated team with over 5 years of experience in business development and management.</p>
+        <p>Our mission is to provide high-quality services tailored to each client's unique needs.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: contact@ourbusiness.com</p>
+        <form id="contactForm">
+            Name:<br>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError" class="error"></span><br>
+
+            Email:<br>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span><br>
+
+            Message:<br>
+            <textarea id="message" name="message" required></textarea>
+            <span id="messageError" class="error"></span><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Thank you! Visit Again. </p>
+    </footer>
+
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("contactForm");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const message = document.getElementById("message").value;
+
+                let valid = true;
+
+                if (!name) {
+                    valid = false;
+                    document.getElementById("nameError").textContent = "Name is required";
+                } else {
+                    document.getElementById("nameError").textContent = "";
+                }
+
+                if (!email) {
+                    valid = false;
+                    document.getElementById("emailError").textContent = "Email is required";
+                } else {
+                    document.getElementById("emailError").textContent = "";
+                }
+
+                if (!message) {
+                    valid = false;
+                    document.getElementById("messageError").textContent = "Message is required";
+                } else {
+                    document.getElementById("messageError").textContent = "";
+                }
+
+                if (valid) {
+                    alert("Form submitted successfully!");
+                    form.reset();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
